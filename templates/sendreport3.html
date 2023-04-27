@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+	<form action="" method="POST" novalidate>
+		<p>
+			{{ form.recipient.label }}<br>
+			{{ form.recipient(size=32) }}
+			{% for error in form.recipient.errors %}
+			<span style="color:red;">[{{error}}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			<label for="select_option">Select an option:</label>
+ 			<select id="select_option" name="select_option">
+     		{% for value, label in options %}
+     		<option value="{{ value }}">{{ label }}</option>
+    		{% endfor %}
+   			</select>
+		</p>
+		<p>{{ form.submit() }}</p>
+	</form>
+{% endblock content %}

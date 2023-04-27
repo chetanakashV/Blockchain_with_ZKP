@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}    
+    <br>
+    <br>
+    {% if data %}
+    <table class="table table-bordered">
+        <tr>
+            <th>Sender</th>
+            <th>Receiver</th>
+            <th>Report</th>
+            
+          </tr>
+      
+        {% for transaction in data %}
+          {% if transaction %}
+            <tr>
+              {% if transaction.sender %}
+              <td>{{transaction.sender.username}}</td>
+              {% endif %}
+              {% if transaction.recipient %}
+              <td>{{transaction.recipient.username}}</td>
+              {% endif %}
+              {% if transaction.report %}
+              <td>{{transaction.report}}</td>
+              {% endif %}
+            </tr>
+          {% endif %}
+        {% endfor %}
+    </table>
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    {% from "_formhelpers.html" import render_field %}
+	<form method=post>
+	  <dl>
+		{{ render_field(form.recipient) }}
+	    {{ render_field(form.report) }}
+	  </dl>
+	  <p><input type=submit class="btn btn-primary btn-lg active" value="Add Report">
+	</form>
+
+	{% if data %}
+	<table class="table table-bordered">
+		<caption style="text-align: center">Reports for {{user}}</caption>
+		<tr>
+			<th style="text-align: center">Report</th>
+		</tr>
+	
+		{% for report in data %}
+		{% if  report %}
+			<tr>
+			<td style="text-align: center">{{report}}</td>
+			</tr>
+		{% endif %}
+		{% endfor %}
+	</table>
+	{% endif %}
+	
+{% endblock content %}

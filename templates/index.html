@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="jumbotron text-center">
+	    <h1>HealthTrack</h1>
+		<br/>
+	    <h4>Health Records Made Secure!</h4>
+	     <div class="btn-group-vertical">
+			<a href="/addreport" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Add Report</a><br/>
+	  		<a href="/viewreport" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Report</a><br/>
+			<a href="/sendreport" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Send Report</a><br/>
+	  		<a href="/viewtransaction" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Transaction</a>
+		</div>
+	 </div>
+
+{% endblock content %}

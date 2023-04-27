@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{%block content %}
+<br/>
+<br/>
+    <h1>Welcome to HealthTrack!</h1>
+    <br/>
+    <h2>Login Here</h2>
+    <br/>
+    <br/>
+    <form action="" method="post" novalidate>
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br/>
+            {% for error in form.username.errors %}<br/>
+            <span style="color:red;">[{{error}}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br/>
+            {% for error in form.password.errors %}<br/>
+            <span style="color:red;">[{{error}}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit() }}</p>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </form>
+
+
+{%endblock %}
